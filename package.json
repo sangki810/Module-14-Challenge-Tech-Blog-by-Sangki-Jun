@@ -1,0 +1,26 @@
+{
+  "name": "module-14-challenge-tech-blog-by-sangki-jun",
+  "version": "1.0.0",
+  "description": "CMS-style Tech Blog following MVC paradigm",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sangki810/Module-14-Challenge-Tech-Blog-by-Sangki-Jun.git"
+  },
+  "keywords": [
+    "MCV",
+    "tech",
+    "blog",
+    "CMS",
+    "14"
+  ],
+  "author": "Sangki Bryan Jun",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sangki810/Module-14-Challenge-Tech-Blog-by-Sangki-Jun/issues"
+  },
+  "homepage": "https://github.com/sangki810/Module-14-Challenge-Tech-Blog-by-Sangki-Jun#readme"
+}
