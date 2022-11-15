@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Blog</title>
+</head>
+<body>
+    <header class="display-flex">
+        <h1>
+            <a href="/">Tech Blog</a>
+        </h1>
+        <nav>
+            {{#if logged_in}}
+            <a href="/dashboard">Dashboard</a>
+            <button class="no-button" id="logout-btn">Logout</button>
+            {{else}}
+            <a href="/login">Login</a>
+            {{/if}}
+        </nav>
+    </header>
+    <main>
+        {{{ body }}}
+    </main>
+    <footer class="align-center">
+        <p>&copy; all rights reserved by Sangki B. Jun</p>
+    </footer>
+    <script src="../../public/js/logout.js"></script>
+</body>
+</html>
