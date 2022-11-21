@@ -31,6 +31,10 @@ To create a pull request:
 ## Tests
 N/A
 
+## Screenshot and Link
+![](./)
+Click here to visit my site: [Tech Blog]()
+
 ## License
 This project is licensed under:<br />
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)<br />

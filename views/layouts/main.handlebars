@@ -4,27 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <title>Tech Blog</title>
 </head>
 <body>
-    <header class="display-flex">
+    <header class="header is-flex">
         <h1>
-            <a href="/">Tech Blog</a>
+            <a class="title is-3" href="/"><b>Tech Blog</b></a>
         </h1>
-        <nav>
+        <nav class="navbar-end">
             {{#if logged_in}}
-            <a href="/dashboard">Dashboard</a>
-            <button class="no-button" id="logout-btn">Logout</button>
+            <a class="button" href="/dashboard">Dashboard</a>
+            <button id="logout-btn">Logout</button>
             {{else}}
-            <a href="/login">Login</a>
+            <a class="button" href="/dashboard">Dashboard</a>
+            <a class="button is-info is-outlined" href="/login">Login</a>
+            <a class="button is-info is-outlined" href="/signup">Signup</a>
             {{/if}}
         </nav>
     </header>
     <main>
         {{{ body }}}
     </main>
-    <footer class="align-center">
-        <p>&copy; all rights reserved by Sangki B. Jun</p>
+    <footer class="footer has-text-centered">
+        <p>&copy; All rights reserved by Sangki B. Jun</p>
     </footer>
     <script src="../../public/js/logout.js"></script>
 </body>

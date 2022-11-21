@@ -3,7 +3,7 @@ const { Post } = require('../../models/');
 const withAuth = require('../../utils/auth');
 
 // CREATE a post
-router.post('/', withAuth, async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const newPost = await Post.create({
       ...req.body,
@@ -16,7 +16,7 @@ router.post('/', withAuth, async (req, res) => {
 });
 
 // GET and render all posts
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const postData = await Post.findAll({
       include: [
@@ -39,7 +39,7 @@ router.get('/', withAuth, async (req, res) => {
 });
 
 // GET and render a single post
-router.get('/:id', withAuth, async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
       include: [
@@ -62,7 +62,7 @@ router.get('/:id', withAuth, async (req, res) => {
 });
 
 // PUT a review (update)
-router.put('/:id', withAuth, async (req, res) => {
+router.put('/:id', async (req, res) => {
   try{
     const postData = await Post.update(
       req.body,
@@ -81,7 +81,7 @@ router.put('/:id', withAuth, async (req, res) => {
 });
 
 // DELETE a review
-router.delete('/:id', withAuth, async (req, res) => {
+router.delete('/:id', async (req, res) => {
   try {
     const postData = await Post.destroy({
       where: { id: req.params.id }

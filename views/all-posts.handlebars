@@ -1,15 +1,11 @@
-{{#each posts as |post| }}
-<div class="row mb-4 project">
-  <div class="col-md-5">
+<section class="hero is-dark is-fullheight">
+  {{#each posts as |post| }}
+  <div class="box m-5">
     <h2>
-      <a href="/post/{{post.id}}">{{post.title}}</a>
+      <a class="subtitle has-text-info" href="/post/{{post.id}}">{{post.title}}</a>
     </h2>
-    <p>Created by {{post.user.username}} on {{format_date post.date_created}}</p>
+    <p>{{post.post_text}}</p>
+    <p class="has-text-right">Posted by {{post.user.username}} on {{format_date post.date_created}}</p>
   </div>
-  <div class="col-md-7">
-    <p>
-      {{post.post_text}}
-    </p>
-  </div>
-</div>
-{{/each}}
+  {{/each}}
+</section>
