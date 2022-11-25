@@ -29,6 +29,8 @@
     <footer class="footer has-text-centered">
         <p>&copy; All rights reserved by Sangki B. Jun</p>
     </footer>
-    <script src="../../public/js/logout.js"></script>
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
 </body>
 </html>

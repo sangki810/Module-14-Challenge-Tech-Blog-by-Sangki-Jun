@@ -9,7 +9,7 @@ const postFormHandler = async function (event) {
             method: 'POST',
             body: JSON.stringify({
                 title,
-                content
+                post_text: content
             }),
             headers: {
                 'Content-Type': 'application/json'

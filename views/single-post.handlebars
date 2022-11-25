@@ -10,7 +10,7 @@
     <div class="box m-5">
         <h2 class="subtitle has-text-dark"><b>Comment</b></h2>
         <form>
-            <input class="input mb-5" type="text" id="comment-input" placeholder="comment">
+            <input class="input mb-5" type="text" id="comment-input" placeholder="comment" data-post_id={{id}}>
             <button class="button is-info" id="comment-btn">Submit</button>
         </form>
     </div>
@@ -22,3 +22,5 @@
     </div>
     {{/each}}
 </section>
+
+<script src="/js/comment.js"></script>
