@@ -1,0 +1,20 @@
+<section class="hero is-dark is-fullheight">
+    <div class="box m-5">
+        <h2 class="subtitle has-text-dark">Add a post</h2>
+        <form>
+            <input class="input mb-5" type="text" id="post-title" placeholder="title">
+            <input class="input mb-5" type="text" id="post-content" placeholder="Add a post">
+            <button class="button is-normal is-responsive is-info">Submit</button>
+        </form>
+    </div>
+    
+    {{#each posts as |post| }}
+    <div class="box m-5">
+        <h2>
+            <a class="subtitle has-text-info" href="/post/{{post.id}}">{{post.title}}</a>
+        </h2>
+        <p>{{post.post_text}}</p>
+        <p class="has-text-right">Posted by {{post.user.username}} on {{format_date post.date_created}}</p>
+    </div>
+    {{/each}}
+</section>

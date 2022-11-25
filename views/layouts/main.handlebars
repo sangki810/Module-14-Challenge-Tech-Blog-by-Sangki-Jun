@@ -15,11 +15,11 @@
         <nav class="navbar-end">
             {{#if logged_in}}
             <a class="button" href="/dashboard">Dashboard</a>
-            <button id="logout-btn">Logout</button>
+            <a class="button is-normal is-responsive is-info is-outlined" id="logout" href="/">Logout</a>
             {{else}}
             <a class="button" href="/dashboard">Dashboard</a>
-            <a class="button is-info is-outlined" href="/login">Login</a>
-            <a class="button is-info is-outlined" href="/signup">Signup</a>
+            <a class="button is-normal is-responsive is-info is-outlined" id="login" href="/login">Login</a>
+            <a class="button is-normal is-responsive is-info is-outlined" id="signup" href="/signup">Signup</a>
             {{/if}}
         </nav>
     </header>
