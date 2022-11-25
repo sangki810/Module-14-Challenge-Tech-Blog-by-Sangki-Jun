@@ -11,14 +11,18 @@
         <h2 class="subtitle has-text-dark"><b>Comment</b></h2>
         <form>
             <input class="input mb-5" type="text" id="comment-input" placeholder="comment" data-post_id={{id}}>
-            <button class="button is-info" id="comment-btn">Submit</button>
+            <button class="button is-info" id="comment-btn">Comment</button>
         </form>
     </div>
 
     {{#each comments as |comment| }}
     <div class="box m-5">
         <p>{{comment.comment_text}}</p>
-        <p class="has-text-right">Commented by {{comment.user.username}} on {{format_date comment.date_created}}</p>
+        <div class="is-pulled-right">
+            <a class="button is-normal is-responsive is-info is-outlined" id="edit-comment">Edit</a>
+            <button class="button is-normal is-responsive is-info is-outlined" id="delete-comment">Delete</button>
+        </div>
+        <p class="pt-5">Commented by {{comment.user.username}} on {{format_date comment.date_created}}</p>
     </div>
     {{/each}}
 </section>

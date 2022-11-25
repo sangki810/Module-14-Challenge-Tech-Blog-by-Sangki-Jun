@@ -4,7 +4,7 @@
         <form>
             <input class="input mb-5" type="text" id="post-title" placeholder="title">
             <input class="input mb-5" type="text" id="post-content" placeholder="Add a post">
-            <button class="button is-normal is-responsive is-info" id="new-post-btn">Submit</button>
+            <button class="button is-normal is-responsive is-info" id="new-post-btn">Post</button>
         </form>
     </div>
     
@@ -14,7 +14,11 @@
             <a class="subtitle has-text-info" href="/post/{{post.id}}">{{post.title}}</a>
         </h2>
         <p>{{post.post_text}}</p>
-        <p class="has-text-right">Posted by {{post.user.username}} on {{format_date post.date_created}}</p>
+        <div class="is-pulled-right">
+            <a class="button is-normal is-responsive is-info is-outlined " id="edit-post">Edit</a>
+            <button class="button is-normal is-responsive is-info is-outlined" id="delete-post">Delete</button>
+        </div>
+        <p class="pt-5">Posted by {{post.user.username}} on {{format_date post.date_created}}</p>
     </div>
     {{/each}}
 </section>
