@@ -10,16 +10,15 @@
 <body>
     <header class="header is-flex">
         <h1>
-            <a class="title is-3" href="/"><b>Tech Blog</b></a>
+            <a class="title is-3 pl-2" href="/"><b>Tech Blog</b></a>
         </h1>
         <nav class="navbar-end">
             {{#if logged_in}}
-            <a class="button" href="/dashboard">Dashboard</a>
-            <a class="button is-normal is-responsive is-info is-outlined" id="logout" href="/">Logout</a>
+            <a class="button mr-2" href="/dashboard">Dashboard</a>
+            <a class="button is-normal is-responsive is-info is-outlined mr-2" id="logout" href="/">Logout</a>
             {{else}}
-            <a class="button" href="/dashboard">Dashboard</a>
-            <a class="button is-normal is-responsive is-info is-outlined" id="login" href="/login">Login</a>
-            <a class="button is-normal is-responsive is-info is-outlined" id="signup" href="/signup">Signup</a>
+            <a class="button is-normal is-responsive is-info is-outlined mr-2" id="login" href="/login">Login</a>
+            <a class="button is-normal is-responsive is-info is-outlined mr-2" id="signup" href="/signup">Signup</a>
             {{/if}}
         </nav>
     </header>
