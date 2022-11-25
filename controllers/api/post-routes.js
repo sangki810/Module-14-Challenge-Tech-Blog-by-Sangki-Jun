@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post } = require('../../models/');
+const { Post, User } = require('../../models/');
 const withAuth = require('../../utils/auth');
 
 // CREATE a post
@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name']
+          attributes: ['username']
         }
       ]
     });
@@ -45,7 +45,7 @@ router.get('/:id', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name']
+          attributes: ['username']
         }
       ]
     });
@@ -61,7 +61,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// PUT a review (update)
+// PUT a post (update)
 router.put('/:id', async (req, res) => {
   try{
     const postData = await Post.update(
@@ -80,7 +80,7 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-// DELETE a review
+// DELETE a post
 router.delete('/:id', async (req, res) => {
   try {
     const postData = await Post.destroy({

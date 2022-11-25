@@ -38,16 +38,28 @@ router.get('/post/:id', async (req, res) => {
                     model: User,
                     attributes: ['username'],
                 },
-                Comment
+                {
+                    model: Comment
+                }
           ],
+        });
+
+        const commentData = await Comment.findAll({
+            where: {
+                post_id: req.params.id 
+            },
+            include: [ { model: User }, { model: Post }]
         });
 
         // serialize the data
         const post = postData.get({ plain: true });
 
+        const comments = commentData.map((comment) => comment.get({ plain: true }));
+
     // render appropriate view, sending it the data it needs (which would be the psot)
         res.render('single-post', {
             ...post,
+            comments,
             logged_in: req.session.logged_in
         });
     } catch (err) {

@@ -1,8 +1,8 @@
 const router = require('express').Router();
-const { Comment } = require('../../models/');
+const { Comment, User } = require('../../models/');
 const withAuth = require('../../utils/auth');
 
-// CREATE a post
+// CREATE a comment
 router.post('/', async (req, res) => {
   try {
     const newComment = await Comment.create({
@@ -15,14 +15,14 @@ router.post('/', async (req, res) => {
   }
 });
 
-// GET and render all posts
+// GET and render all comments
 router.get('/', async (req, res) => {
   try {
     const commentData = await Comment.findAll({
       include: [
         {
           model: User,
-          attributes: ['name']
+          attributes: ['username']
         }
       ]
     });
@@ -38,14 +38,14 @@ router.get('/', async (req, res) => {
   }
 });
 
-// GET and render a single post
+// GET and render a single comment
 router.get('/:id', async (req, res) => {
   try {
     const commentData = await Comment.findByPk(req.params.id, {
       include: [
         {
           model: User,
-          attributes: ['name']
+          attributes: ['username']
         }
       ]
     });
@@ -61,7 +61,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// PUT a review (update)
+// PUT a comment (update)
 router.put('/:id', async (req, res) => {
   try{
     const commentData = await Comment.update(
@@ -80,7 +80,7 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-// DELETE a review
+// DELETE a comment
 router.delete('/:id', async (req, res) => {
   try {
     const commentData = await Comment.destroy({
