@@ -3,7 +3,7 @@
         <h2 class="subtitle has-text-dark"><b>Post</b></h2>
         <form>
             <input class="input mb-5" type="text" id="post-title" placeholder="title">
-            <input class="input mb-5" type="text" id="post-content" placeholder="Add a post">
+            <textarea class="input mb-5" type="text" id="post-content" placeholder="Add a post"></textarea>
             <button class="button is-normal is-responsive is-info" id="new-post-btn">Post</button>
         </form>
     </div>
@@ -16,7 +16,7 @@
         <p>{{post.post_text}}</p>
         <div class="is-pulled-right">
             <a class="button is-normal is-responsive is-info is-outlined " id="edit-post">Edit</a>
-            <button class="button is-normal is-responsive is-info is-outlined" id="delete-post">Delete</button>
+            <button class="button is-normal is-responsive is-info is-outlined" id="delete-post" data-post_id="{{id}}">Delete</button>
         </div>
         <p class="pt-5">Posted by {{post.user.username}} on {{format_date post.date_created}}</p>
     </div>
@@ -24,3 +24,4 @@
 </section>
 
 <script src="/js/new.js"></script>
+<script src="/js/delete-post.js"></script>
