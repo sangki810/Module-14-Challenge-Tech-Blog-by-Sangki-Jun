@@ -1,4 +1,4 @@
-const deleteFormHandler = async function (event) {
+const deletePostFormHandler = async function (event) {
     event.preventDefault();
 
     if (event.target.hasAttribute('data-post_id')) {
@@ -13,4 +13,4 @@ const deleteFormHandler = async function (event) {
 
 document
     .getElementById('delete-post')
-    .addEventListener('click', deleteFormHandler);
+    .addEventListener('click', deletePostFormHandler);
