@@ -15,7 +15,7 @@
         </h2>
         <p>{{post.post_text}}</p>
         <div class="is-pulled-right">
-            <a class="button is-normal is-responsive is-info is-outlined " id="edit-post">Edit</a>
+            <a class="button is-normal is-responsive is-info is-outlined " id="edit-post" href="/dashboard/edit/{{id}}">Edit</a>
             <button class="button is-normal is-responsive is-info is-outlined" id="delete-post" data-post_id="{{id}}">Delete</button>
         </div>
         <p class="pt-5">Posted by {{post.user.username}} on {{format_date post.date_created}}</p>
