@@ -19,7 +19,7 @@
     <div class="box m-5">
         <p>{{comment.comment_text}}</p>
         <div class="is-pulled-right">
-            <a class="button is-normal is-responsive is-info is-outlined" id="edit-comment">Edit</a>
+            <a class="button is-normal is-responsive is-info is-outlined" id="edit-comment" href="/api/comment/edit/{{id}}">Edit</a>
             <button class="button is-normal is-responsive is-info is-outlined" id="delete-comment" data-comment_id="{{id}}">Delete</button>
         </div>
         <p class="pt-5">Commented by {{comment.user.username}} on {{format_date comment.date_created}}</p>

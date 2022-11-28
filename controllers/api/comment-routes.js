@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Comment, User } = require('../../models/');
+const { Comment, User, Post } = require('../../models/');
 const withAuth = require('../../utils/auth');
 
 // CREATE a comment
@@ -75,6 +75,35 @@ router.put('/:id', async (req, res) => {
     }
 
     res.status(200).json(`Comment ${req.params.id} has been updated`);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/edit/:id', async (req, res) => {
+  try {
+    const commentData = await Comment.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['username']
+        },
+        {
+          model: Post,
+          attributes: [
+            'id',
+            'user_id'
+          ]
+        }
+      ]
+    });
+
+    const comment = commentData.get({ plain: true });
+
+    res.render('edit-comment', {
+      ...comment,
+      logged_in: req.session.logged_in
+    });
   } catch (err) {
     res.status(500).json(err);
   }
