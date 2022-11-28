@@ -13,7 +13,8 @@ This is the completed module 14 challenge from the UCF FSF Bootcamp. The purpose
 6. [Questions](#questions)
 
 ## Installations
-N/A
+The link to the deployed website is here: [Tech-blog](https://tech-blog-by-sangki-jun.herokuapp.com/). <br />
+![](./public/assets/tech-blog.PNG)
 
 ## Usage
 Sign up, login, and start posting! This site is a fully functioning blog site about tech, but you can post about anything here.
@@ -27,13 +28,6 @@ To create a pull request:
 4. Commit the changes using `git commit -m "message here"`.
 5. Push the changes using `git push origin branch-name`.
 6. Create a pull request on GitHub.
-
-## Tests
-N/A
-
-## Screenshot and Link
-![](./)
-Click here to visit my site: [Tech Blog]()
 
 ## License
 This project is licensed under:<br />

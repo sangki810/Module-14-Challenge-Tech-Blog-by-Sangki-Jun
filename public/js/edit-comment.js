@@ -18,7 +18,8 @@ const editCommentFormHandler = async function (event) {
             }
         });
 
-        if (response.ok) { 
+        if (response.ok) {
+            // go back a page and refresh
             window.location.replace(document.referrer);
         } else {
             alert(response.statusText);
