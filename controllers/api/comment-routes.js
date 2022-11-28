@@ -3,7 +3,7 @@ const { Comment, User, Post } = require('../../models/');
 const withAuth = require('../../utils/auth');
 
 // CREATE a comment
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
   try {
     const newComment = await Comment.create({
       ...req.body,
@@ -62,7 +62,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // PUT a comment (update)
-router.put('/:id', async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
   try{
     const commentData = await Comment.update(
       req.body,
@@ -80,7 +80,8 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-router.get('/edit/:id', async (req, res) => {
+// render a comment to edit
+router.get('/edit/:id', withAuth, async (req, res) => {
   try {
     const commentData = await Comment.findByPk(req.params.id, {
       include: [
@@ -110,7 +111,7 @@ router.get('/edit/:id', async (req, res) => {
 });
 
 // DELETE a comment
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
   try {
     const commentData = await Comment.destroy({
       where: { id: req.params.id }

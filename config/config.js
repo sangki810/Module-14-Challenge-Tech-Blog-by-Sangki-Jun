@@ -1,9 +1,10 @@
 // dependencies
 const Sequelize = require('sequelize');
 
-// username and password
+// username and password contained in enviroment
 require('dotenv').config();
 
+// create connection to database
 let sequelize;
 
 if (process.env.JAWSDB_URL) {

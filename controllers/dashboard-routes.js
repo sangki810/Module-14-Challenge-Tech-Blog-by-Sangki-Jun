@@ -2,7 +2,8 @@ const router = require('express').Router();
 const { Post, Comment, User } = require('../models/');
 const withAuth = require('../utils/auth');
 
-router.get('/', async (req, res) => {
+// GET all posts made by user
+router.get('/', withAuth, async (req, res) => {
     try {
         const postData = await Post.findAll({
             where: {
@@ -22,7 +23,8 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/edit/:id', async (req, res) => {
+// edit a post made by user
+router.get('/edit/:id', withAuth, async (req, res) => {
     try {
         const postData = await Post.findByPk(req.params.id, {
             include: [

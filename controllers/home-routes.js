@@ -29,6 +29,7 @@ router.get('/', async (req, res) => {
     }
 });
 
+// get a single post for homepage
 router.get('/post/:id', async (req, res) => {
     // find a Post by Pk
     try {
@@ -67,6 +68,7 @@ router.get('/post/:id', async (req, res) => {
     }
 });
 
+// render login
 router.get('/login', (req, res) => {
     // activity 18, home-routes.js
     if (req.session.logged_in) {
@@ -76,6 +78,7 @@ router.get('/login', (req, res) => {
     res.render('login')
 });
 
+// render signup
 router.get('/signup', (req, res) => {
     // activity 18, home-routes.js
     if (req.session.logged_in) {
