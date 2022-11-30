@@ -12,5 +12,5 @@ const deletePostFormHandler = async function (event) {
 };
 
 document
-    .getElementById('delete-post')
-    .addEventListener('click', deletePostFormHandler);
+    .querySelectorAll('.delete-post')
+    .forEach(e => e.addEventListener('click', deletePostFormHandler));

@@ -12,5 +12,5 @@ const deleteCommentFormHandler = async function (event) {
 };
 
 document
-    .getElementById('delete-comment')
-    .addEventListener('click', deleteCommentFormHandler);
+    .querySelectorAll('.delete-comment')
+    .forEach(e => e.addEventListener('click', deleteCommentFormHandler));
